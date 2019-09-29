@@ -14,7 +14,7 @@ class AddTitileToTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->string('status', 10); //statusカラム追加
+            $table->string('status', 10)->change(); //statusカラム追加
             //
         });
     }
@@ -27,7 +27,7 @@ class AddTitileToTasksTable extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn('status', 10);
+            $table->dropColumn('status', 10)->change();
             //
         });
     }
